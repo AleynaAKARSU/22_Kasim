@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+
+
+    <script>
+      var dizi = ["Elma", "Armut", "Kavun"];
+      var kisiler = [
+        {
+          id: 0,
+          adi: "Zeynep",
+          soyadi: "Bıçak",
+          yaş: 15,
+          cinsiyet: "Kadin",
+          unvani: "Öğrenci",
+          puan: 65,
+        },
+        {
+          id: 1,
+          adi: "Ayşe",
+          soyadi: "Yılmaz",
+          yaş: 15,
+          cinsiyet: "Kadin",
+          unvani: "Öğrenci",
+          puan: 75,
+        },
+        {
+          id: 2,
+          adi: "Ece",
+          soyadi: "Derin",
+          yaş: 32,
+          cinsiyet: "Kadin",
+          unvani: "Öğrenci",
+          puan: 85,
+        },
+        {
+          id: 3,
+          adi: "Veli",
+          soyadi: "Deneme",
+          yaş: 26,
+          cinsiyet: "Erkek",
+          unvani: "Öğrenci",
+          puan: 75,
+        },
+        {
+          id: 4,
+          adi: "Ali",
+          soyadi: "Soyad",
+          yaş: 52,
+          cinsiyet: "Erkek",
+          unvani: "Öğrenci",
+          puan: 95,
+        },
+      ];
+      document.getElementById('demo').innerHTML=kisiler[0]['adi']
+      var adi=kisiler.map(dataAdi=> dataAdi.adi)
+      var adiArrayDonuşumu= ['Zeynep','Ayşe','Ece','Veli','Ali']
+      document.getElementById('demo2').innerHTML=adi
+
+      var soyadi= kisiler.map(dataSoyadi =>dataSoyadi.soyadi)
+      var soyadiArrayDurumu= ['Bıçak','Yılmaz','Derin','Deneme','Soyad']
+
+      document.getElementById('demo3').innerHTML=soyadi
+
+      var yas= kisiler.map(dataYas =>dataYas.yaş)
+      var yaşArraySonHali= [ 15, 15,32, 26,52]
+
+      document.getElementById('demo4').innerHTML=yas
+      var yas15Buyuk = kisiler.filter(data =>data.yaş>15)
+      var filterSonucuArray = [ {
+          id: 2,
+          adi: "Ece",
+          soyadi: "Derin",
+          yaş: 32,
+          cinsiyet: "Kadin",
+          unvani: "Öğrenci",
+          puan: 85,
+        },
+        {
+          id: 3,
+          adi: "Veli",
+          soyadi: "Deneme",
+          yaş: 26,
+          cinsiyet: "Erkek",
+          unvani: "Öğrenci",
+          puan: 75,
+        },
+        {
+          id: 4,
+          adi: "Ali",
+          soyadi: "Soyad",
+          yaş: 52,
+          cinsiyet: "Erkek",
+          unvani: "Öğrenci",
+          puan: 95,
+        },
+    ]
+      document.getElementById('demo5').innerHTML=yas15Buyuk
+      yas15BuyukPuan = yas15Buyuk.map(data=>data.puan)
+      document.getElementById('demo6').innerHTML=yas15BuyukPuan
+      var puanBilgisi = kisiler.filter(data=>data.puan >=75)
+      puanBilgisiFilterSonucu= [
+      {
+          id: 1,
+          adi: "Ayşe",
+          soyadi: "Yılmaz",
+          yaş: 15,
+          cinsiyet: "Kadin",
+          unvani: "Öğrenci",
+          puan: 75,
+        },
+        {
+          id: 2,
+          adi: "Ece",
+          soyadi: "Derin",
+          yaş: 32,
+          cinsiyet: "Kadin",
+          unvani: "Öğrenci",
+          puan: 85,
+        },
+        {
+          id: 3,
+          adi: "Veli",
+          soyadi: "Deneme",
+          yaş: 26,
+          cinsiyet: "Erkek",
+          unvani: "Öğrenci",
+          puan: 75,
+        },
+        {
+          id: 4,
+          adi: "Ali",
+          soyadi: "Soyad",
+          yaş: 52,
+          cinsiyet: "Erkek",
+          unvani: "Öğrenci",
+          puan: 95,
+        },
+
+
+      ]
+console.log(puanBilgisi)
+var puanInfo= puanBilgisi.map(data=>data.puan)
+var puanInfoTümArray= kisiler.map(data=>data.puan)
+
+document.getElementById('demo7').innerHTML=puanInfo
+document.getElementById('demo8').innerHTML=puanInfoTümArray
+
+    </script>
+  </body>
+</html>
